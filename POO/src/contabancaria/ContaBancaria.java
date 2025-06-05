@@ -21,18 +21,13 @@ public class ContaBancaria {
     public double getSaldo() {
         return saldo;
     }
-    
-
-    public void setNumeroConta(String numeroConta) {
-        this.numeroConta = numeroConta;
-    }
 
     public void setTitular(String titular) {
         this.titular = titular;
     }
 
     public void saque(double valor){
-        if (saldo < valor) {
+        if (saldo <= valor) {
             System.out.printf("Saldo insuficiente para saque de R$ %.2f!%n",valor);
         }else{
             saldo-=valor;
@@ -45,7 +40,7 @@ public class ContaBancaria {
         System.out.printf("Depósito de R$ %.2f realizado.%n",valor);
     }
 
-    public void mostrarSaldo(){
-        System.out.printf("Saldo atual: R$ %.2f%n",saldo);
+    public void mostrarSaldo() {
+        System.out.printf("Titular: %s | Saldo: R$ %.2f%n", titular, saldo);
     }
 }
